@@ -14,293 +14,202 @@
 
   <style>
 
-    /* ==================================================
-       VARIABLES
-       ================================================== */
-
     :root {
-      --bg: #f5f7f4;
+      --bg: #f6f8f5;
       --white: #ffffff;
-
-      --green: #173f38;
-      --green-dark: #12342e;
-      --green-2: #3e705d;
-      --green-3: #79a08d;
-
-      --green-soft: #e8f0ea;
+      --green: #12483d;
+      --green-dark: #0b392f;
+      --green-medium: #4f806d;
+      --green-light: #dfece5;
       --green-pale: #f0f5f1;
-
-      --text: #17211d;
-      --muted: #617068;
-
-      --line: #d9e3dc;
-
-      --shadow: 0 12px 35px rgba(23, 63, 56, 0.09);
+      --text: #17312a;
+      --muted: #617069;
+      --line: #d8e3dc;
     }
-
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
       margin: 0;
-
-      font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      background: #f7f8f5;
-
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
       color: var(--text);
-
       line-height: 1.65;
     }
-
-
-    a {
-      color: inherit;
-    }
-
 
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: auto;
     }
 
-
-
-    /* ==================================================
-       NAVEGACIÓN
-       ================================================== */
+    /* ===============================
+       MENÚ
+       =============================== */
 
     nav {
       position: sticky;
       top: 0;
-
       z-index: 100;
 
-      background: rgba(247, 249, 246, 0.95);
+      background: rgba(248, 250, 248, 0.96);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
 
-      border-bottom: 1px solid rgba(23, 63, 56, 0.10);
+      border-bottom: 1px solid var(--line);
     }
-
 
     .nav-inner {
       min-height: 68px;
 
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
 
       gap: 25px;
     }
 
-
     .brand {
-      text-decoration: none;
-
-      font-weight: 800;
-      font-size: 1.05rem;
-
-      letter-spacing: 0.02em;
-
       color: var(--green);
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-decoration: none;
     }
-
 
     .nav-links {
       display: flex;
       gap: 22px;
-      flex-wrap: wrap;
     }
-
 
     .nav-links a {
-      text-decoration: none;
-
       color: var(--muted);
-
+      text-decoration: none;
       font-size: 0.9rem;
-
-      transition: color 0.2s ease;
     }
-
 
     .nav-links a:hover {
       color: var(--green);
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        PORTADA
-       ================================================== */
+       =============================== */
 
-    .hero-portada {
+    .hero {
+      background:
+        linear-gradient(
+          135deg,
+          #dce9e1 0%,
+          #f7f9f6 50%,
+          #d5e5dc 100%
+        );
+
+      padding: 45px 0 60px;
+
       position: relative;
 
       overflow: hidden;
-
-      padding: 48px 20px 60px;
-
-      background:
-        radial-gradient(
-          circle at 10% 30%,
-          rgba(80, 135, 108, 0.14),
-          transparent 28%
-        ),
-
-        radial-gradient(
-          circle at 90% 70%,
-          rgba(46, 94, 76, 0.10),
-          transparent 30%
-        ),
-
-        linear-gradient(
-          135deg,
-          #e5eee8 0%,
-          #f7f8f5 50%,
-          #dfeae3 100%
-        );
     }
 
-
-    .hero-portada::before {
+    .hero::before {
       content: "";
 
       position: absolute;
 
-      width: 480px;
-      height: 700px;
+      width: 400px;
+      height: 600px;
 
-      left: -360px;
-      top: -270px;
+      left: -300px;
+      top: -200px;
 
-      background: rgba(65, 115, 91, 0.11);
+      background: rgba(54, 111, 88, 0.12);
 
-      transform: rotate(38deg);
+      transform: rotate(35deg);
     }
 
+    .hero-image-container {
+      width: min(1280px, calc(100% - 50px));
 
-    .hero-portada::after {
-      content: "";
+      margin: auto;
 
-      position: absolute;
-
-      width: 500px;
-      height: 700px;
-
-      right: -380px;
-      bottom: -350px;
-
-      background: rgba(24, 63, 54, 0.08);
-
-      transform: rotate(38deg);
-    }
-
-
-    .portada-wrapper {
       position: relative;
 
       z-index: 2;
-
-      width: min(1150px, 94%);
-
-      margin: auto;
     }
 
-
-    .portada-img {
+    .hero-image {
       display: block;
 
       width: 100%;
       height: auto;
 
-      border-radius: 8px;
+      border-radius: 10px;
 
       box-shadow:
-        0 25px 65px rgba(23, 63, 56, 0.16),
-        0 5px 18px rgba(23, 63, 56, 0.09);
+        0 25px 60px rgba(16, 64, 52, 0.18);
     }
 
 
-
-    /* ==================================================
-       GENERAL
-       ================================================== */
+    /* ===============================
+       SECCIONES
+       =============================== */
 
     section {
+      padding: 90px 0;
       position: relative;
-
-      padding: 88px 0;
     }
-
 
     section:nth-of-type(even) {
-      background: rgba(232, 240, 234, 0.42);
+      background: #edf4ef;
     }
 
-
     .eyebrow {
+      color: var(--green-medium);
+
       font-size: 0.78rem;
+
+      font-weight: 800;
 
       text-transform: uppercase;
 
       letter-spacing: 0.16em;
-
-      color: var(--green-2);
-
-      font-weight: 800;
     }
 
-
     .section-title {
-      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      color: var(--green);
+
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
 
       line-height: 1.05;
 
       letter-spacing: -0.04em;
 
-      margin: 8px 0 20px;
-
-      color: var(--green);
+      margin: 10px 0 20px;
     }
-
 
     .section-title::after {
       content: "";
 
       display: block;
 
-      width: 58px;
+      width: 60px;
       height: 4px;
 
       margin-top: 17px;
 
-      background:
-        linear-gradient(
-          90deg,
-          var(--green-2),
-          var(--green-3)
-        );
+      background: var(--green-medium);
 
       border-radius: 10px;
     }
 
-
     .section-intro {
-      max-width: 820px;
+      max-width: 850px;
 
       color: var(--muted);
 
@@ -308,10 +217,9 @@
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        CHIPS
-       ================================================== */
+       =============================== */
 
     .chips {
       display: flex;
@@ -323,26 +231,24 @@
       margin-top: 20px;
     }
 
-
     .chip {
-      background: rgba(232, 240, 234, 0.90);
+      background: #e7f0ea;
 
-      border: 1px solid #d5e2da;
+      border: 1px solid #d2e1d8;
+
+      color: #315c4d;
 
       border-radius: 999px;
 
       padding: 7px 12px;
 
       font-size: 0.83rem;
-
-      color: #315747;
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        ÁREAS
-       ================================================== */
+       =============================== */
 
     .areas-grid {
       display: grid;
@@ -354,18 +260,12 @@
       margin-top: 38px;
     }
 
-
     .area-card {
       position: relative;
 
       overflow: hidden;
 
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff 0%,
-          #f8faf8 100%
-        );
+      background: white;
 
       border: 1px solid var(--line);
 
@@ -374,13 +274,10 @@
       padding: 30px;
 
       box-shadow:
-        0 8px 25px rgba(23, 63, 56, 0.055);
+        0 8px 25px rgba(18, 72, 61, 0.06);
 
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: 0.25s ease;
     }
-
 
     .area-card::before {
       content: "";
@@ -396,28 +293,23 @@
       background:
         linear-gradient(
           90deg,
-          var(--green),
-          var(--green-3)
+          #12483d,
+          #75a58e
         );
     }
-
 
     .area-card:hover {
       transform: translateY(-5px);
 
       box-shadow:
-        0 18px 40px rgba(23, 63, 56, 0.11);
+        0 18px 40px rgba(18, 72, 61, 0.12);
     }
-
 
     .area-card h3 {
-      margin-top: 0;
-
       color: var(--green);
 
-      font-size: 1.2rem;
+      margin-top: 0;
     }
-
 
     .area-card p {
       color: var(--muted);
@@ -426,93 +318,84 @@
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        PROYECTO PRINCIPAL
-       ================================================== */
+       =============================== */
 
     .project-main {
+      margin-top: 38px;
+
+      padding: 50px;
+
       position: relative;
 
       overflow: hidden;
 
+      color: white;
+
       background:
         linear-gradient(
           135deg,
-          #173f38 0%,
-          #285d4e 65%,
-          #477d68 100%
+          #10483c 0%,
+          #286451 65%,
+          #5d9178 100%
         );
 
-      color: white;
-
-      border-radius: 27px;
-
-      padding: 50px;
-
-      margin-top: 38px;
+      border-radius: 28px;
 
       box-shadow:
-        0 20px 50px rgba(23, 63, 56, 0.18);
+        0 20px 50px rgba(18, 72, 61, 0.18);
     }
-
 
     .project-main::after {
       content: "";
 
       position: absolute;
 
-      width: 350px;
-      height: 520px;
+      width: 400px;
+      height: 600px;
 
-      right: -230px;
-      top: -160px;
+      right: -270px;
+      top: -200px;
 
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255,255,255,0.08);
 
       transform: rotate(35deg);
     }
 
-
     .project-main > * {
       position: relative;
-
       z-index: 2;
     }
 
-
     .project-main .eyebrow {
-      color: #c4ddd3;
+      color: #c4ddd2;
     }
 
-
     .project-main h3 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 4vw, 3rem);
 
       line-height: 1.05;
 
       margin: 12px 0 18px;
     }
 
-
     .project-main p {
-      color: #e1ede8;
+      color: #e3eee9;
     }
-
 
     .project-main .chip {
-      background: rgba(255, 255, 255, 0.10);
-
-      border-color: rgba(255, 255, 255, 0.18);
-
       color: white;
+
+      background: rgba(255,255,255,0.1);
+
+      border-color: rgba(255,255,255,0.18);
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        RESULTADOS
-       ================================================== */
+       =============================== */
 
     .results {
       display: grid;
@@ -524,41 +407,35 @@
       margin-top: 30px;
     }
 
-
     .result {
-      background: rgba(255, 255, 255, 0.09);
+      background: rgba(255,255,255,0.09);
 
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.15);
 
       border-radius: 18px;
 
       padding: 24px;
     }
 
-
     .result strong {
       display: block;
 
-      font-size: 1.7rem;
-
-      line-height: 1.1;
+      font-size: 1.6rem;
 
       margin-bottom: 8px;
     }
 
-
     .result span {
-      color: #e0ece7;
+      color: #e1ede8;
     }
 
 
-
-    /* ==================================================
-       PROYECTOS SECUNDARIOS
-       ================================================== */
+    /* ===============================
+       OTROS PROYECTOS
+       =============================== */
 
     .project-card {
-      background: rgba(255, 255, 255, 0.96);
+      background: white;
 
       border: 1px solid var(--line);
 
@@ -567,30 +444,22 @@
       padding: 32px;
 
       margin-top: 18px;
-
-      box-shadow:
-        0 6px 20px rgba(23, 63, 56, 0.04);
     }
-
 
     .project-card h3 {
-      font-size: 1.45rem;
-
       color: var(--green);
 
-      margin-bottom: 12px;
+      font-size: 1.45rem;
     }
-
 
     .project-card p {
       color: var(--muted);
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        COLABORACIONES
-       ================================================== */
+       =============================== */
 
     .collaboration {
       display: grid;
@@ -604,34 +473,30 @@
       border-top: 1px solid var(--line);
     }
 
-
     .collaboration h3 {
-      margin: 0;
-
       color: var(--green);
-    }
 
+      margin: 0;
+    }
 
     .collaboration p {
-      margin: 0;
-
       color: var(--muted);
+
+      margin: 0;
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        EXPERIENCIA
-       ================================================== */
+       =============================== */
 
     .timeline {
-      border-left: 2px solid #cddbd2;
+      border-left: 2px solid #cbdcd2;
 
       margin-top: 38px;
 
       margin-left: 7px;
     }
-
 
     .experience {
       position: relative;
@@ -639,56 +504,50 @@
       padding: 0 0 42px 32px;
     }
 
-
     .experience::before {
       content: "";
+
+      position: absolute;
 
       width: 12px;
       height: 12px;
 
-      border-radius: 50%;
-
-      background: var(--green-2);
-
-      position: absolute;
-
       left: -7px;
       top: 8px;
 
-      box-shadow:
-        0 0 0 5px #edf3ef;
+      border-radius: 50%;
+
+      background: var(--green-medium);
+
+      box-shadow: 0 0 0 5px #edf3ef;
     }
 
-
     .experience-date {
-      color: var(--green-2);
+      color: var(--green-medium);
 
       font-weight: 800;
 
       font-size: 0.86rem;
     }
 
-
     .experience h3 {
-      margin: 5px 0 8px;
-
       color: var(--green);
+
+      margin: 5px 0 8px;
     }
 
-
     .experience p {
-      margin: 0;
-
       color: var(--muted);
 
       max-width: 900px;
+
+      margin: 0;
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        HERRAMIENTAS
-       ================================================== */
+       =============================== */
 
     .skills-grid {
       display: grid;
@@ -698,37 +557,28 @@
       gap: 18px;
     }
 
-
     .skills-card {
-      background: rgba(255, 255, 255, 0.96);
+      background: white;
 
       border: 1px solid var(--line);
 
       border-radius: 20px;
 
       padding: 30px;
-
-      box-shadow:
-        0 6px 20px rgba(23, 63, 56, 0.04);
     }
-
 
     .skills-card h3 {
-      font-size: 1.4rem;
-
       color: var(--green);
     }
-
 
     .lab-list {
       color: var(--muted);
     }
 
 
-
-    /* ==================================================
-       EDUCACIÓN
-       ================================================== */
+    /* ===============================
+       FORMACIÓN
+       =============================== */
 
     .education-grid {
       display: grid;
@@ -738,30 +588,24 @@
       gap: 18px;
     }
 
-
     .education-card {
-      background: rgba(255, 255, 255, 0.96);
+      background: white;
 
       border: 1px solid var(--line);
 
       border-radius: 20px;
 
       padding: 30px;
-
-      box-shadow:
-        0 6px 20px rgba(23, 63, 56, 0.04);
     }
-
 
     .education-card h3 {
       color: var(--green);
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        VOLUNTARIADO
-       ================================================== */
+       =============================== */
 
     .volunteer-grid {
       display: grid;
@@ -773,107 +617,70 @@
       margin-top: 38px;
     }
 
-
     .volunteer {
-      background: rgba(255, 255, 255, 0.96);
+      background: white;
 
       border: 1px solid var(--line);
 
       border-radius: 20px;
 
       padding: 27px;
-
-      box-shadow:
-        0 6px 20px rgba(23, 63, 56, 0.04);
     }
 
-
     .volunteer small {
-      color: var(--green-2);
+      color: var(--green-medium);
 
       font-weight: 800;
     }
 
-
     .volunteer h3 {
-      margin: 7px 0 10px;
-
       color: var(--green);
-    }
 
+      margin: 7px 0 10px;
+    }
 
     .volunteer p {
-      margin: 0;
-
       color: var(--muted);
+
+      margin: 0;
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        CONTACTO
-       ================================================== */
+       =============================== */
 
     .contact-box {
       position: relative;
 
       overflow: hidden;
 
+      padding: 55px;
+
       background:
         linear-gradient(
           135deg,
-          #e1ece5,
+          #dcebe2,
           #f5f8f5
         );
 
-      border: 1px solid #d2dfd6;
+      border: 1px solid #d0dfd6;
 
-      border-radius: 27px;
-
-      padding: 55px;
-
-      box-shadow:
-        0 15px 40px rgba(23, 63, 56, 0.07);
+      border-radius: 28px;
     }
-
-
-    .contact-box::after {
-      content: "";
-
-      position: absolute;
-
-      width: 300px;
-      height: 500px;
-
-      right: -190px;
-      top: -150px;
-
-      background: rgba(55, 108, 86, 0.09);
-
-      transform: rotate(35deg);
-    }
-
-
-    .contact-box > * {
-      position: relative;
-
-      z-index: 2;
-    }
-
 
     .contact-text {
-      font-size: 1.12rem;
-
       max-width: 750px;
 
       color: #405048;
+
+      font-size: 1.12rem;
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        BOTONES
-       ================================================== */
+       =============================== */
 
     .buttons {
       display: flex;
@@ -885,73 +692,51 @@
       margin-top: 30px;
     }
 
-
     .button {
       display: inline-block;
 
       padding: 12px 20px;
+
+      border: 1px solid var(--green);
 
       border-radius: 999px;
 
       text-decoration: none;
 
       font-weight: 700;
-
-      border: 1px solid var(--green);
-
-      transition:
-        all 0.2s ease;
     }
-
 
     .button-primary {
-      background: var(--green);
-
       color: white;
+
+      background: var(--green);
     }
-
-
-    .button-primary:hover {
-      background: var(--green-dark);
-
-      transform: translateY(-2px);
-    }
-
 
     .button-secondary {
       color: var(--green);
 
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-
-    .button-secondary:hover {
       background: white;
-
-      transform: translateY(-2px);
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        FOOTER
-       ================================================== */
+       =============================== */
 
     footer {
       padding: 38px 0 50px;
 
       color: var(--muted);
 
-      font-size: 0.9rem;
-
       text-align: center;
+
+      font-size: 0.9rem;
     }
 
 
-
-    /* ==================================================
+    /* ===============================
        CELULAR
-       ================================================== */
+       =============================== */
 
     @media (max-width: 820px) {
 
@@ -959,26 +744,21 @@
         display: none;
       }
 
-
-      .hero-portada {
-        padding: 22px 10px 35px;
+      .hero {
+        padding: 20px 0 30px;
       }
 
-
-      .portada-wrapper {
-        width: 100%;
+      .hero-image-container {
+        width: calc(100% - 20px);
       }
 
-
-      .portada-img {
-        border-radius: 4px;
+      .hero-image {
+        border-radius: 5px;
       }
-
 
       section {
         padding: 62px 0;
       }
-
 
       .areas-grid,
       .results,
@@ -988,13 +768,11 @@
         grid-template-columns: 1fr;
       }
 
-
       .collaboration {
         grid-template-columns: 1fr;
 
         gap: 8px;
       }
-
 
       .project-main,
       .contact-box {
@@ -1002,16 +780,6 @@
 
         border-radius: 20px;
       }
-
-
-      .area-card,
-      .project-card,
-      .skills-card,
-      .education-card,
-      .volunteer {
-        border-radius: 17px;
-      }
-
 
       .section-title {
         font-size: 2.3rem;
@@ -1026,9 +794,7 @@
 <body>
 
 
-<!-- ==================================================
-     MENÚ
-     ================================================== -->
+<!-- MENÚ -->
 
 <nav>
 
@@ -1038,32 +804,19 @@
       Camila Coffen
     </a>
 
-
     <div class="nav-links">
 
-      <a href="#perfil">
-        Perfil
-      </a>
+      <a href="#perfil">Perfil</a>
 
-      <a href="#areas">
-        Áreas
-      </a>
+      <a href="#areas">Áreas</a>
 
-      <a href="#proyectos">
-        Proyectos
-      </a>
+      <a href="#proyectos">Proyectos</a>
 
-      <a href="#experiencia">
-        Experiencia
-      </a>
+      <a href="#experiencia">Experiencia</a>
 
-      <a href="#formacion">
-        Formación
-      </a>
+      <a href="#formacion">Formación</a>
 
-      <a href="#contacto">
-        Contacto
-      </a>
+      <a href="#contacto">Contacto</a>
 
     </div>
 
@@ -1072,22 +825,19 @@
 </nav>
 
 
-
-<!-- ==================================================
+<!-- ==========================================
      PORTADA
+     La imagen se llama portada.png
+     ========================================== -->
 
-     IMPORTANTE:
-     portada.png debe estar en el MISMO lugar que index.html
-     ================================================== -->
+<header class="hero">
 
-<header class="hero-portada">
-
-  <div class="portada-wrapper">
+  <div class="hero-image-container">
 
     <img
-      src="./portada.png"
-      alt="Camila Coffen - Ingeniera Agrónoma - Investigación y Desarrollo"
-      class="portada-img"
+      src="portada.png"
+      class="hero-image"
+      alt="Camila Coffen - Ingeniera Agrónoma"
     >
 
   </div>
@@ -1095,13 +845,10 @@
 </header>
 
 
-
 <main>
 
 
-<!-- ==================================================
-     PERFIL
-     ================================================== -->
+<!-- PERFIL -->
 
 <section id="perfil">
 
@@ -1111,11 +858,9 @@
       Perfil
     </div>
 
-
     <h2 class="section-title">
       Investigación aplicada a la producción vegetal
     </h2>
-
 
     <p class="section-intro">
 
@@ -1128,7 +873,6 @@
       sistemas productivos.
 
     </p>
-
 
     <div class="chips">
 
@@ -1165,10 +909,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     ÁREAS
-     ================================================== -->
+<!-- ÁREAS -->
 
 <section id="areas">
 
@@ -1177,7 +918,6 @@
     <div class="eyebrow">
       Especialización
     </div>
-
 
     <h2 class="section-title">
       Áreas de trabajo
@@ -1189,20 +929,17 @@
 
       <article class="area-card">
 
-        <h3>
-          Bioinsumos
-        </h3>
+        <h3>Bioinsumos</h3>
 
         <p>
           Evaluación de microorganismos de interés agronómico
           y de su interacción con las plantas. Experiencia con
-          <em>Azospirillum brasilense</em>,
-          microorganismos promotores del crecimiento vegetal
-          (PGPR), hongos endófitos y micorrizas.
+          <em>Azospirillum brasilense</em>, microorganismos
+          promotores del crecimiento vegetal (PGPR), hongos
+          endófitos y micorrizas.
         </p>
 
       </article>
-
 
 
       <article class="area-card">
@@ -1222,7 +959,6 @@
       </article>
 
 
-
       <article class="area-card">
 
         <h3>
@@ -1238,7 +974,6 @@
         </p>
 
       </article>
-
 
 
       <article class="area-card">
@@ -1257,7 +992,6 @@
       </article>
 
 
-
       <article class="area-card">
 
         <h3>
@@ -1272,7 +1006,6 @@
         </p>
 
       </article>
-
 
 
       <article class="area-card">
@@ -1300,10 +1033,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     PROYECTOS
-     ================================================== -->
+<!-- PROYECTOS -->
 
 <section id="proyectos">
 
@@ -1313,12 +1043,12 @@
       Investigación & Desarrollo
     </div>
 
-
     <h2 class="section-title">
       Proyectos de I+D
     </h2>
 
 
+    <!-- TESIS MAESTRÍA -->
 
     <article class="project-main">
 
@@ -1326,11 +1056,9 @@
         Tesis de Maestría · FAUBA · UBA · 2024–2026
       </div>
 
-
       <h3>
         Detección temprana del cancro bacteriano del tomate
       </h3>
-
 
       <p>
         Desarrollo y evaluación de metodologías ópticas para
@@ -1358,9 +1086,7 @@
           Microbiología
         </span>
 
-        <span class="chip">
-          R
-        </span>
+        <span class="chip">R</span>
 
         <span class="chip">
           MATLAB
@@ -1371,7 +1097,6 @@
         </span>
 
       </div>
-
 
 
       <div class="results">
@@ -1389,7 +1114,6 @@
           </span>
 
         </div>
-
 
 
         <div class="result">
@@ -1413,6 +1137,7 @@
     </article>
 
 
+    <!-- TESIS GRADO -->
 
     <article class="project-card">
 
@@ -1420,11 +1145,9 @@
         Tesis de Grado · INTA Castelar
       </div>
 
-
       <h3>
         Valorización agronómica de digeridos anaeróbicos
       </h3>
-
 
       <p>
         Evaluación del uso agronómico de digeridos anaeróbicos
@@ -1435,7 +1158,6 @@
         efluentes y su posible impacto sobre el agua
         subterránea.
       </p>
-
 
       <p>
         Realización de ensayos en invernáculo con avena
@@ -1471,6 +1193,7 @@
     </article>
 
 
+    <!-- MAÍZ -->
 
     <article class="project-card">
 
@@ -1478,11 +1201,9 @@
         Asesoramiento técnico · Análisis de datos
       </div>
 
-
       <h3>
         Análisis de ensayo de fertilización en maíz
       </h3>
-
 
       <p>
         Asesoramiento a un productor en el análisis de datos
@@ -1524,10 +1245,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     COLABORACIONES
-     ================================================== -->
+<!-- COLABORACIONES -->
 
 <section>
 
@@ -1537,11 +1255,9 @@
       Participación científica
     </div>
 
-
     <h2 class="section-title">
       Colaboraciones en investigación
     </h2>
-
 
 
     <div class="collaboration">
@@ -1559,7 +1275,6 @@
     </div>
 
 
-
     <div class="collaboration">
 
       <h3>
@@ -1575,7 +1290,6 @@
       </p>
 
     </div>
-
 
 
     <div class="collaboration">
@@ -1597,10 +1311,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     EXPERIENCIA
-     ================================================== -->
+<!-- EXPERIENCIA -->
 
 <section id="experiencia">
 
@@ -1610,14 +1321,12 @@
       Trayectoria
     </div>
 
-
     <h2 class="section-title">
       Experiencia profesional
     </h2>
 
 
     <div class="timeline">
-
 
 
       <article class="experience">
@@ -1642,7 +1351,6 @@
       </article>
 
 
-
       <article class="experience">
 
         <div class="experience-date">
@@ -1665,7 +1373,6 @@
       </article>
 
 
-
       <article class="experience">
 
         <div class="experience-date">
@@ -1684,7 +1391,6 @@
         </p>
 
       </article>
-
 
 
       <article class="experience">
@@ -1707,7 +1413,6 @@
       </article>
 
 
-
       <article class="experience">
 
         <div class="experience-date">
@@ -1726,7 +1431,6 @@
         </p>
 
       </article>
-
 
 
       <article class="experience">
@@ -1755,10 +1459,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     HERRAMIENTAS
-     ================================================== -->
+<!-- HERRAMIENTAS -->
 
 <section>
 
@@ -1767,7 +1468,6 @@
     <div class="eyebrow">
       Capacidades técnicas
     </div>
-
 
     <h2 class="section-title">
       Herramientas y metodologías
@@ -1785,38 +1485,17 @@
 
         <div class="chips">
 
-          <span class="chip">
-            R / RStudio
-          </span>
-
-          <span class="chip">
-            MATLAB
-          </span>
-
-          <span class="chip">
-            Fiji
-          </span>
-
-          <span class="chip">
-            Power BI
-          </span>
-
-          <span class="chip">
-            Excel
-          </span>
-
-          <span class="chip">
-            Infostat
-          </span>
-
-          <span class="chip">
-            Google Earth Engine
-          </span>
+          <span class="chip">R / RStudio</span>
+          <span class="chip">MATLAB</span>
+          <span class="chip">Fiji</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Excel</span>
+          <span class="chip">Infostat</span>
+          <span class="chip">Google Earth Engine</span>
 
         </div>
 
       </article>
-
 
 
       <article class="skills-card">
@@ -1842,7 +1521,6 @@
         </div>
 
       </article>
-
 
 
       <article class="skills-card">
@@ -1890,7 +1568,6 @@
       </article>
 
 
-
       <article class="skills-card">
 
         <h3>
@@ -1903,60 +1580,14 @@
             Análisis físico-químicos:
           </strong>
 
-          nitrógeno por Kjeldahl,
-          fósforo extractable por Bray,
-          materia orgánica por Walkley-Black,
-          pH, conductividad eléctrica,
-          cationes y aniones.
+          nitrógeno por Kjeldahl, fósforo extractable por Bray,
+          materia orgánica por Walkley-Black, pH,
+          conductividad eléctrica, cationes y aniones.
 
         </p>
 
-
-        <div class="chips">
-
-          <span class="chip">
-            Nitrógeno Kjeldahl
-          </span>
-
-          <span class="chip">
-            Fósforo Bray
-          </span>
-
-          <span class="chip">
-            Walkley-Black
-          </span>
-
-          <span class="chip">
-            pH
-          </span>
-
-          <span class="chip">
-            Conductividad eléctrica
-          </span>
-
-          <span class="chip">
-            Cationes
-          </span>
-
-          <span class="chip">
-            Aniones
-          </span>
-
-          <span class="chip">
-            Preparación de soluciones
-          </span>
-
-          <span class="chip">
-            Procesamiento de muestras
-          </span>
-
-          <span class="chip">
-            Calibración de instrumental
-          </span>
-
-        </div>
-
       </article>
+
 
     </div>
 
@@ -1965,10 +1596,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     FORMACIÓN
-     ================================================== -->
+<!-- FORMACIÓN -->
 
 <section id="formacion">
 
@@ -1977,7 +1605,6 @@
     <div class="eyebrow">
       Formación
     </div>
-
 
     <h2 class="section-title">
       Educación
@@ -2006,7 +1633,6 @@
 
         </p>
 
-
         <p>
 
           <em>
@@ -2017,7 +1643,6 @@
         </p>
 
       </article>
-
 
 
       <article class="education-card">
@@ -2045,14 +1670,13 @@
         </h3>
 
         <p>
-          Español nativo
-          <br>
-          Inglés avanzado
-          <br>
+          Español nativo<br>
+          Inglés avanzado<br>
           Italiano intermedio
         </p>
 
       </article>
+
 
     </div>
 
@@ -2061,10 +1685,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     VOLUNTARIADO
-     ================================================== -->
+<!-- VOLUNTARIADO -->
 
 <section>
 
@@ -2073,7 +1694,6 @@
     <div class="eyebrow">
       Sustentabilidad y compromiso social
     </div>
-
 
     <h2 class="section-title">
       Voluntariado y compromiso ambiental
@@ -2103,7 +1723,6 @@
       </article>
 
 
-
       <article class="volunteer">
 
         <small>
@@ -2121,7 +1740,6 @@
         </p>
 
       </article>
-
 
 
       <article class="volunteer">
@@ -2142,7 +1760,6 @@
       </article>
 
 
-
       <article class="volunteer">
 
         <small>
@@ -2161,6 +1778,7 @@
 
       </article>
 
+
     </div>
 
   </div>
@@ -2168,10 +1786,7 @@
 </section>
 
 
-
-<!-- ==================================================
-     CONTACTO
-     ================================================== -->
+<!-- CONTACTO -->
 
 <section id="contacto">
 
@@ -2183,11 +1798,9 @@
         Contacto
       </div>
 
-
       <h2 class="section-title">
         ¿Hablamos?
       </h2>
-
 
       <p class="contact-text">
 
@@ -2201,10 +1814,7 @@
       </p>
 
 
-      <div
-        class="buttons"
-        style="justify-content:flex-start"
-      >
+      <div class="buttons">
 
         <a
           class="button button-primary"
@@ -2238,7 +1848,6 @@
 
 
 </main>
-
 
 
 <footer>
