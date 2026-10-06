@@ -1,158 +1,2700 @@
-/* ===============================
-   PORTADA
-   =============================== */
+<!DOCTYPE html>
+<html lang="es">
 
-.hero {
-  min-height: 430px;
+<head>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  <meta charset="UTF-8">
 
-  text-align: center;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  position: relative;
-  overflow: hidden;
+  <title>Camila Coffen | Ingeniera Agrónoma | I+D</title>
 
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(86, 139, 112, 0.18),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 75%,
-      rgba(46, 94, 76, 0.12),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #e1ece5 0%,
-      #f8faf7 48%,
-      #dce9e1 100%
-    );
-}
+  <meta
+    name="description"
+    content="Portfolio profesional de Camila Coffen, Ingeniera Agrónoma especializada en Investigación y Desarrollo Agronómico, bioinsumos, sanidad vegetal, sensores ópticos, laboratorio y análisis de datos."
+  >
 
 
-/* formas diagonales decorativas */
+  <style>
 
-.hero::before {
-  content: "";
+    /* ==================================================
+       COLORES GENERALES
+       ================================================== */
 
-  position: absolute;
+    :root {
 
-  width: 430px;
-  height: 700px;
+      --bg: #f7f8f5;
 
-  left: -310px;
-  top: -250px;
+      --white: #ffffff;
 
-  background: rgba(50, 105, 83, 0.11);
+      --green: #123f36;
 
-  transform: rotate(38deg);
-}
+      --green-dark: #0d332b;
 
+      --green-medium: #4f806d;
 
-.hero::after {
-  content: "";
+      --green-light: #dfece5;
 
-  position: absolute;
+      --green-pale: #edf4ef;
 
-  width: 430px;
-  height: 700px;
+      --text: #17312a;
 
-  right: -320px;
-  bottom: -390px;
+      --muted: #617069;
 
-  background: rgba(50, 105, 83, 0.09);
+      --line: #d8e3dc;
 
-  transform: rotate(38deg);
-}
+    }
 
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-
-  padding: 60px 20px;
-}
+    * {
+      box-sizing: border-box;
+    }
 
 
-.hero h1 {
-  margin: 0;
-
-  color: #123f36;
-
-  font-size: clamp(3rem, 7vw, 5.8rem);
-
-  font-weight: 800;
-
-  letter-spacing: 0.04em;
-
-  line-height: 1;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
 
-.hero-line {
-  width: 75px;
-  height: 4px;
+    body {
 
-  margin: 28px auto;
+      margin: 0;
 
-  border-radius: 10px;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  background: #57836f;
-}
+      background: var(--bg);
 
+      color: var(--text);
 
-.hero h2 {
-  margin: 0 0 9px;
+      line-height: 1.65;
 
-  color: #315e4e;
-
-  font-size: clamp(1rem, 2vw, 1.35rem);
-
-  font-weight: 700;
-
-  letter-spacing: 0.18em;
-}
+    }
 
 
-.hero p {
-  margin: 0;
-
-  color: #61766d;
-
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
-
-  font-weight: 600;
-
-  letter-spacing: 0.22em;
-}
+    a {
+      color: inherit;
+    }
 
 
-/* CELULAR */
+    .container {
 
-@media (max-width: 820px) {
+      width: min(
+        1120px,
+        calc(100% - 40px)
+      );
 
-  .hero {
-    min-height: 350px;
-  }
+      margin: auto;
 
-  .hero-content {
-    padding: 50px 20px;
-  }
+    }
 
-  .hero h1 {
-    font-size: 3rem;
-  }
 
-  .hero h2 {
-    font-size: 0.95rem;
-  }
 
-  .hero p {
-    font-size: 0.78rem;
-  }
+    /* ==================================================
+       MENÚ SUPERIOR
+       ================================================== */
 
-}
+    nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+      background:
+        rgba(248, 250, 248, 0.96);
+
+      backdrop-filter:
+        blur(10px);
+
+      border-bottom:
+        1px solid var(--line);
+
+    }
+
+
+    .nav-inner {
+
+      min-height: 68px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 25px;
+
+    }
+
+
+    .brand {
+
+      color: var(--green);
+
+      font-size: 1.05rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.02em;
+
+      text-decoration: none;
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 22px;
+
+      align-items: center;
+
+    }
+
+
+    .nav-links a {
+
+      color: var(--muted);
+
+      text-decoration: none;
+
+      font-size: 0.9rem;
+
+      transition:
+        color 0.2s ease;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--green);
+
+    }
+
+
+
+    /* ==================================================
+       PORTADA
+       ================================================== */
+
+    .hero {
+
+      min-height: 320px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      text-align: center;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 30%,
+          rgba(76, 130, 104, 0.16),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 85% 70%,
+          rgba(55, 105, 84, 0.12),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          135deg,
+          #dce9e1 0%,
+          #f7f9f6 48%,
+          #dce9e1 100%
+        );
+
+    }
+
+
+    /* Forma decorativa izquierda */
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+
+      height: 650px;
+
+      left: -320px;
+
+      top: -300px;
+
+      background:
+        rgba(54, 105, 84, 0.10);
+
+      transform:
+        rotate(38deg);
+
+    }
+
+
+    /* Forma decorativa derecha */
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+
+      height: 650px;
+
+      right: -320px;
+
+      bottom: -340px;
+
+      background:
+        rgba(54, 105, 84, 0.08);
+
+      transform:
+        rotate(38deg);
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      padding:
+        50px 20px;
+
+    }
+
+
+    .hero h1 {
+
+      margin: 0;
+
+      color: var(--green);
+
+      font-size:
+        clamp(
+          3.3rem,
+          6vw,
+          5.5rem
+        );
+
+      font-weight: 800;
+
+      letter-spacing:
+        -0.035em;
+
+      line-height: 1;
+
+    }
+
+
+    .hero-line {
+
+      width: 68px;
+
+      height: 4px;
+
+      margin:
+        23px auto;
+
+      background:
+        var(--green-medium);
+
+      border-radius: 10px;
+
+    }
+
+
+    .hero h2 {
+
+      margin:
+        0 0 6px;
+
+      color:
+        #315f50;
+
+      font-size:
+        clamp(
+          1rem,
+          2vw,
+          1.25rem
+        );
+
+      font-weight: 700;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.17em;
+
+    }
+
+
+    .hero p {
+
+      margin: 0;
+
+      color:
+        #687a72;
+
+      font-size:
+        clamp(
+          0.8rem,
+          1.5vw,
+          0.95rem
+        );
+
+      font-weight: 600;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.21em;
+
+    }
+
+
+
+    /* ==================================================
+       SECCIONES
+       ================================================== */
+
+    section {
+
+      position: relative;
+
+      padding:
+        88px 0;
+
+    }
+
+
+    section:nth-of-type(even) {
+
+      background:
+        rgba(232, 240, 234, 0.48);
+
+    }
+
+
+    .eyebrow {
+
+      color:
+        var(--green-medium);
+
+      font-size:
+        0.78rem;
+
+      font-weight: 800;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.16em;
+
+    }
+
+
+    .section-title {
+
+      color:
+        var(--green);
+
+      font-size:
+        clamp(
+          2.2rem,
+          5vw,
+          3.7rem
+        );
+
+      line-height: 1.05;
+
+      letter-spacing:
+        -0.04em;
+
+      margin:
+        8px 0 20px;
+
+    }
+
+
+    .section-title::after {
+
+      content: "";
+
+      display: block;
+
+      width: 58px;
+
+      height: 4px;
+
+      margin-top:
+        17px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--green-medium),
+          #79a08d
+        );
+
+      border-radius:
+        10px;
+
+    }
+
+
+    .section-intro {
+
+      max-width:
+        850px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        1.05rem;
+
+    }
+
+
+
+    /* ==================================================
+       ETIQUETAS
+       ================================================== */
+
+    .chips {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top:
+        20px;
+
+    }
+
+
+    .chip {
+
+      background:
+        #e7f0ea;
+
+      border:
+        1px solid #d2e1d8;
+
+      color:
+        #315c4d;
+
+      border-radius:
+        999px;
+
+      padding:
+        7px 12px;
+
+      font-size:
+        0.83rem;
+
+    }
+
+
+
+    /* ==================================================
+       ÁREAS
+       ================================================== */
+
+    .areas-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top:
+        38px;
+
+    }
+
+
+    .area-card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        var(--white);
+
+      border:
+        1px solid var(--line);
+
+      border-radius:
+        18px;
+
+      padding:
+        30px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(18, 72, 61, 0.06);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    }
+
+
+    .area-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 5px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--green),
+          #75a58e
+        );
+
+    }
+
+
+    .area-card:hover {
+
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 18px 40px
+        rgba(18, 72, 61, 0.12);
+
+    }
+
+
+    .area-card h3 {
+
+      color:
+        var(--green);
+
+      margin-top: 0;
+
+      font-size:
+        1.2rem;
+
+    }
+
+
+    .area-card p {
+
+      color:
+        var(--muted);
+
+      margin-bottom: 0;
+
+    }
+
+
+
+    /* ==================================================
+       PROYECTO PRINCIPAL
+       ================================================== */
+
+    .project-main {
+
+      margin-top:
+        38px;
+
+      padding:
+        50px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      color: white;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #10483c 0%,
+          #286451 65%,
+          #5d9178 100%
+        );
+
+      border-radius:
+        28px;
+
+      box-shadow:
+        0 20px 50px
+        rgba(18, 72, 61, 0.18);
+
+    }
+
+
+    .project-main::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 400px;
+
+      height: 600px;
+
+      right: -270px;
+
+      top: -200px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      transform:
+        rotate(35deg);
+
+    }
+
+
+    .project-main > * {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .project-main .eyebrow {
+
+      color:
+        #c4ddd2;
+
+    }
+
+
+    .project-main h3 {
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3rem
+        );
+
+      line-height: 1.05;
+
+      margin:
+        12px 0 18px;
+
+    }
+
+
+    .project-main p {
+
+      color:
+        #e3eee9;
+
+    }
+
+
+    .project-main .chip {
+
+      color: white;
+
+      background:
+        rgba(255,255,255,0.10);
+
+      border-color:
+        rgba(255,255,255,0.18);
+
+    }
+
+
+
+    /* ==================================================
+       RESULTADOS
+       ================================================== */
+
+    .results {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 15px;
+
+      margin-top:
+        30px;
+
+    }
+
+
+    .result {
+
+      background:
+        rgba(255,255,255,0.09);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+      border-radius:
+        18px;
+
+      padding:
+        24px;
+
+    }
+
+
+    .result strong {
+
+      display: block;
+
+      font-size:
+        1.6rem;
+
+      line-height: 1.1;
+
+      margin-bottom:
+        8px;
+
+    }
+
+
+    .result span {
+
+      color:
+        #e1ede8;
+
+    }
+
+
+
+    /* ==================================================
+       OTROS PROYECTOS
+       ================================================== */
+
+    .project-card {
+
+      background:
+        var(--white);
+
+      border:
+        1px solid var(--line);
+
+      border-radius:
+        22px;
+
+      padding:
+        32px;
+
+      margin-top:
+        18px;
+
+      box-shadow:
+        0 6px 20px
+        rgba(18,72,61,0.04);
+
+    }
+
+
+    .project-card h3 {
+
+      color:
+        var(--green);
+
+      font-size:
+        1.45rem;
+
+      margin-bottom:
+        12px;
+
+    }
+
+
+    .project-card p {
+
+      color:
+        var(--muted);
+
+    }
+
+
+
+    /* ==================================================
+       COLABORACIONES
+       ================================================== */
+
+    .collaboration {
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr 1.8fr;
+
+      gap: 30px;
+
+      padding:
+        27px 0;
+
+      border-top:
+        1px solid var(--line);
+
+    }
+
+
+    .collaboration h3 {
+
+      color:
+        var(--green);
+
+      margin: 0;
+
+    }
+
+
+    .collaboration p {
+
+      color:
+        var(--muted);
+
+      margin: 0;
+
+    }
+
+
+
+    /* ==================================================
+       EXPERIENCIA
+       ================================================== */
+
+    .timeline {
+
+      border-left:
+        2px solid #cbdcd2;
+
+      margin-top:
+        38px;
+
+      margin-left:
+        7px;
+
+    }
+
+
+    .experience {
+
+      position: relative;
+
+      padding:
+        0 0 42px 32px;
+
+    }
+
+
+    .experience::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 12px;
+
+      height: 12px;
+
+      left: -7px;
+
+      top: 8px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--green-medium);
+
+      box-shadow:
+        0 0 0 5px #edf3ef;
+
+    }
+
+
+    .experience-date {
+
+      color:
+        var(--green-medium);
+
+      font-weight: 800;
+
+      font-size:
+        0.86rem;
+
+    }
+
+
+    .experience h3 {
+
+      color:
+        var(--green);
+
+      margin:
+        5px 0 8px;
+
+    }
+
+
+    .experience p {
+
+      color:
+        var(--muted);
+
+      max-width:
+        900px;
+
+      margin: 0;
+
+    }
+
+
+
+    /* ==================================================
+       HERRAMIENTAS
+       ================================================== */
+
+    .skills-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+
+    }
+
+
+    .skills-card {
+
+      background:
+        var(--white);
+
+      border:
+        1px solid var(--line);
+
+      border-radius:
+        20px;
+
+      padding:
+        30px;
+
+      box-shadow:
+        0 6px 20px
+        rgba(18,72,61,0.04);
+
+    }
+
+
+    .skills-card h3 {
+
+      color:
+        var(--green);
+
+      font-size:
+        1.4rem;
+
+    }
+
+
+    .lab-list {
+
+      color:
+        var(--muted);
+
+    }
+
+
+
+    /* ==================================================
+       FORMACIÓN
+       ================================================== */
+
+    .education-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.2fr 0.8fr;
+
+      gap: 18px;
+
+    }
+
+
+    .education-card {
+
+      background:
+        var(--white);
+
+      border:
+        1px solid var(--line);
+
+      border-radius:
+        20px;
+
+      padding:
+        30px;
+
+      box-shadow:
+        0 6px 20px
+        rgba(18,72,61,0.04);
+
+    }
+
+
+    .education-card h3 {
+
+      color:
+        var(--green);
+
+    }
+
+
+
+    /* ==================================================
+       VOLUNTARIADO
+       ================================================== */
+
+    .volunteer-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+
+      margin-top:
+        38px;
+
+    }
+
+
+    .volunteer {
+
+      background:
+        var(--white);
+
+      border:
+        1px solid var(--line);
+
+      border-radius:
+        20px;
+
+      padding:
+        27px;
+
+      box-shadow:
+        0 6px 20px
+        rgba(18,72,61,0.04);
+
+    }
+
+
+    .volunteer small {
+
+      color:
+        var(--green-medium);
+
+      font-weight: 800;
+
+    }
+
+
+    .volunteer h3 {
+
+      color:
+        var(--green);
+
+      margin:
+        7px 0 10px;
+
+    }
+
+
+    .volunteer p {
+
+      color:
+        var(--muted);
+
+      margin: 0;
+
+    }
+
+
+
+    /* ==================================================
+       CONTACTO
+       ================================================== */
+
+    .contact-box {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        55px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #dcebe2,
+          #f5f8f5
+        );
+
+      border:
+        1px solid #d0dfd6;
+
+      border-radius:
+        28px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(18,72,61,0.07);
+
+    }
+
+
+    .contact-text {
+
+      max-width:
+        750px;
+
+      color:
+        #405048;
+
+      font-size:
+        1.12rem;
+
+    }
+
+
+
+    /* ==================================================
+       BOTONES
+       ================================================== */
+
+    .buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top:
+        30px;
+
+    }
+
+
+    .button {
+
+      display:
+        inline-block;
+
+      padding:
+        12px 20px;
+
+      border:
+        1px solid var(--green);
+
+      border-radius:
+        999px;
+
+      text-decoration:
+        none;
+
+      font-weight: 700;
+
+      transition:
+        all 0.2s ease;
+
+    }
+
+
+    .button-primary {
+
+      color: white;
+
+      background:
+        var(--green);
+
+    }
+
+
+    .button-primary:hover {
+
+      background:
+        var(--green-dark);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .button-secondary {
+
+      color:
+        var(--green);
+
+      background:
+        white;
+
+    }
+
+
+    .button-secondary:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+
+    /* ==================================================
+       FOOTER
+       ================================================== */
+
+    footer {
+
+      padding:
+        38px 0 50px;
+
+      color:
+        var(--muted);
+
+      text-align:
+        center;
+
+      font-size:
+        0.9rem;
+
+    }
+
+
+
+    /* ==================================================
+       CELULAR
+       ================================================== */
+
+    @media (max-width: 820px) {
+
+
+      .nav-links {
+
+        display: none;
+
+      }
+
+
+      .hero {
+
+        min-height:
+          270px;
+
+      }
+
+
+      .hero-content {
+
+        padding:
+          42px 20px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          2.8rem;
+
+      }
+
+
+      .hero h2 {
+
+        font-size:
+          0.9rem;
+
+      }
+
+
+      .hero p {
+
+        font-size:
+          0.75rem;
+
+      }
+
+
+      section {
+
+        padding:
+          62px 0;
+
+      }
+
+
+      .areas-grid,
+      .results,
+      .skills-grid,
+      .education-grid,
+      .volunteer-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .collaboration {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 8px;
+
+      }
+
+
+      .project-main,
+      .contact-box {
+
+        padding:
+          30px 24px;
+
+        border-radius:
+          20px;
+
+      }
+
+
+      .section-title {
+
+        font-size:
+          2.3rem;
+
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     MENÚ
+     ================================================== -->
+
+<nav>
+
+  <div class="container nav-inner">
+
+    <a
+      href="#"
+      class="brand"
+    >
+      Camila Coffen
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="#perfil">
+        Perfil
+      </a>
+
+      <a href="#areas">
+        Áreas
+      </a>
+
+      <a href="#proyectos">
+        Proyectos
+      </a>
+
+      <a href="#experiencia">
+        Experiencia
+      </a>
+
+      <a href="#formacion">
+        Formación
+      </a>
+
+      <a href="#contacto">
+        Contacto
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ==================================================
+     PORTADA
+     NO UTILIZA NINGUNA IMAGEN
+     ================================================== -->
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Camila Coffen
+    </h1>
+
+    <div class="hero-line"></div>
+
+    <h2>
+      Ingeniera Agrónoma
+    </h2>
+
+    <p>
+      Investigación y Desarrollo
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ==================================================
+     PERFIL
+     ================================================== -->
+
+<section id="perfil">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Perfil
+    </div>
+
+
+    <h2 class="section-title">
+      Investigación aplicada a la producción vegetal
+    </h2>
+
+
+    <p class="section-intro">
+
+      Mi experiencia se centra en Investigación y Desarrollo
+      Agronómico, integrando experimentación con plantas,
+      laboratorio, microbiología, técnicas ópticas y análisis
+      de datos para estudiar respuestas vegetales, evaluar
+      tecnologías e insumos y abordar problemáticas vinculadas
+      con la sanidad vegetal y la sustentabilidad de los
+      sistemas productivos.
+
+    </p>
+
+
+    <div class="chips">
+
+      <span class="chip">
+        I+D
+      </span>
+
+      <span class="chip">
+        Producción vegetal
+      </span>
+
+      <span class="chip">
+        Bioinsumos
+      </span>
+
+      <span class="chip">
+        Sanidad vegetal
+      </span>
+
+      <span class="chip">
+        Sustentabilidad
+      </span>
+
+      <span class="chip">
+        Sensores
+      </span>
+
+      <span class="chip">
+        Análisis de datos
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ÁREAS DE TRABAJO
+     ================================================== -->
+
+<section id="areas">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Especialización
+    </div>
+
+
+    <h2 class="section-title">
+      Áreas de trabajo
+    </h2>
+
+
+    <div class="areas-grid">
+
+
+      <article class="area-card">
+
+        <h3>
+          Bioinsumos
+        </h3>
+
+        <p>
+          Evaluación de microorganismos de interés agronómico
+          y de su interacción con las plantas. Experiencia con
+          <em>Azospirillum brasilense</em>,
+          microorganismos promotores del crecimiento vegetal
+          (PGPR), hongos endófitos y micorrizas.
+        </p>
+
+      </article>
+
+
+
+      <article class="area-card">
+
+        <h3>
+          Enmiendas orgánicas
+        </h3>
+
+        <p>
+          Evaluación agronómica de digeridos anaeróbicos
+          provenientes del tratamiento de efluentes de
+          producciones intensivas, integrando ensayos con
+          plantas y análisis de suelo, efluentes y materiales
+          orgánicos.
+        </p>
+
+      </article>
+
+
+
+      <article class="area-card">
+
+        <h3>
+          Sanidad vegetal
+        </h3>
+
+        <p>
+          Investigación en enfermedades de plantas, con
+          experiencia en cancro bacteriano del tomate causado
+          por <em>Clavibacter michiganensis</em>, evaluación
+          de la respuesta vegetal y metodologías para su
+          detección temprana.
+        </p>
+
+      </article>
+
+
+
+      <article class="area-card">
+
+        <h3>
+          Sensores ópticos
+        </h3>
+
+        <p>
+          Aplicación de reflectancia espectral, fluorescencia
+          de clorofila y biospeckle láser para caracterizar
+          respuestas vegetales frente a estrés biótico y
+          abiótico.
+        </p>
+
+      </article>
+
+
+
+      <article class="area-card">
+
+        <h3>
+          Análisis de datos e imágenes
+        </h3>
+
+        <p>
+          Análisis estadístico y multivariado de datos
+          experimentales, procesamiento de señales e imágenes
+          y visualización de resultados mediante R/RStudio,
+          MATLAB, Fiji, Excel e Infostat.
+        </p>
+
+      </article>
+
+
+
+      <article class="area-card">
+
+        <h3>
+          Laboratorio físico-químico
+        </h3>
+
+        <p>
+          Experiencia en análisis de suelo, agua y material
+          vegetal: nitrógeno por Kjeldahl, fósforo extractable
+          por Bray, materia orgánica por Walkley-Black, pH,
+          conductividad eléctrica, cationes y aniones,
+          preparación de soluciones, procesamiento de muestras
+          y calibración de instrumental.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PROYECTOS
+     ================================================== -->
+
+<section id="proyectos">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Investigación & Desarrollo
+    </div>
+
+
+    <h2 class="section-title">
+      Proyectos de I+D
+    </h2>
+
+
+
+    <!-- TESIS DE MAESTRÍA -->
+
+    <article class="project-main">
+
+      <div class="eyebrow">
+        Tesis de Maestría · FAUBA · UBA · 2024–2026
+      </div>
+
+
+      <h3>
+        Detección temprana del cancro bacteriano del tomate
+      </h3>
+
+
+      <p>
+        Desarrollo y evaluación de metodologías ópticas para
+        la detección temprana del cancro bacteriano del tomate
+        y el estudio de la respuesta de las plantas frente a
+        infección, estrés hídrico y microorganismos benéficos.
+      </p>
+
+
+      <div class="chips">
+
+        <span class="chip">
+          Reflectancia espectral
+        </span>
+
+        <span class="chip">
+          Biospeckle láser
+        </span>
+
+        <span class="chip">
+          Fluorescencia
+        </span>
+
+        <span class="chip">
+          Microbiología
+        </span>
+
+        <span class="chip">
+          R
+        </span>
+
+        <span class="chip">
+          MATLAB
+        </span>
+
+        <span class="chip">
+          Fiji
+        </span>
+
+      </div>
+
+
+      <div class="results">
+
+
+        <div class="result">
+
+          <strong>
+            Hasta 15 días antes
+          </strong>
+
+          <span>
+            Identificación de alteraciones asociadas a la
+            enfermedad mediante técnicas ópticas antes de la
+            manifestación visual de la infección.
+          </span>
+
+        </div>
+
+
+
+        <div class="result">
+
+          <strong>
+            Azospirillum brasilense
+          </strong>
+
+          <span>
+            Evaluación de su efecto sobre el crecimiento
+            vegetal y la respuesta frente a
+            <em>C. michiganensis</em>, observándose promoción
+            del crecimiento y menor severidad del cancro en
+            plantas inoculadas con <em>Azospirillum</em>.
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+    <!-- TESIS DE GRADO -->
+
+    <article class="project-card">
+
+      <div class="eyebrow">
+        Tesis de Grado · INTA Castelar
+      </div>
+
+
+      <h3>
+        Valorización agronómica de digeridos anaeróbicos
+      </h3>
+
+
+      <p>
+        Evaluación del uso agronómico de digeridos anaeróbicos
+        provenientes del tratamiento de efluentes de
+        producciones intensivas, considerando tanto su
+        potencial como fuente de nutrientes como la
+        problemática ambiental asociada al manejo de estos
+        efluentes y su posible impacto sobre el agua
+        subterránea.
+      </p>
+
+
+      <p>
+        Realización de ensayos en invernáculo con avena
+        forrajera y análisis físico-químicos de suelo,
+        efluentes y digeridos.
+      </p>
+
+
+      <div class="chips">
+
+        <span class="chip">
+          Enmiendas orgánicas
+        </span>
+
+        <span class="chip">
+          Suelos
+        </span>
+
+        <span class="chip">
+          Efluentes
+        </span>
+
+        <span class="chip">
+          Producción vegetal
+        </span>
+
+        <span class="chip">
+          Sustentabilidad
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ENSAYO DE MAÍZ -->
+
+    <article class="project-card">
+
+      <div class="eyebrow">
+        Asesoramiento técnico · Análisis de datos
+      </div>
+
+
+      <h3>
+        Análisis de ensayo de fertilización en maíz
+      </h3>
+
+
+      <p>
+        Asesoramiento a un productor en el análisis de datos
+        de un ensayo de maíz con distintos tratamientos de
+        fertilización, orientado a evaluar estadísticamente
+        las diferencias de rendimiento entre tratamientos e
+        interpretar los resultados experimentales.
+      </p>
+
+
+      <div class="chips">
+
+        <span class="chip">
+          Análisis de datos
+        </span>
+
+        <span class="chip">
+          Maíz
+        </span>
+
+        <span class="chip">
+          Fertilización
+        </span>
+
+        <span class="chip">
+          Rendimiento
+        </span>
+
+        <span class="chip">
+          Ensayos agronómicos
+        </span>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     COLABORACIONES
+     ================================================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Participación científica
+    </div>
+
+
+    <h2 class="section-title">
+      Colaboraciones en investigación
+    </h2>
+
+
+
+    <div class="collaboration">
+
+      <h3>
+        Hongos endófitos y micorrizas
+      </h3>
+
+      <p>
+        Participación en líneas de investigación vinculadas
+        con microorganismos asociados a plantas, incluyendo
+        microscopía de hongos endófitos y micorrizas.
+      </p>
+
+    </div>
+
+
+
+    <div class="collaboration">
+
+      <h3>
+        Sistemas silvopastoriles del Bajo Delta del Paraná
+      </h3>
+
+      <p>
+        Participación en ensayos de investigación en sistemas
+        silvopastoriles mediante la medición de variables de
+        rendimiento vegetal y la aplicación de técnicas
+        ópticas, incluyendo reflectancia espectral y
+        fluorescencia de clorofila.
+      </p>
+
+    </div>
+
+
+
+    <div class="collaboration">
+
+      <h3>
+        Producción y manejo de alfalfa
+      </h3>
+
+      <p>
+        Participación en actividades de investigación
+        vinculadas con producción vegetal y manejo de
+        <em>Medicago sativa</em>.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     EXPERIENCIA
+     ================================================== -->
+
+<section id="experiencia">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Trayectoria
+    </div>
+
+
+    <h2 class="section-title">
+      Experiencia profesional
+    </h2>
+
+
+    <div class="timeline">
+
+
+
+      <article class="experience">
+
+        <div class="experience-date">
+          2024 — 2026
+        </div>
+
+        <h3>
+          Becaria de Maestría y Ayudante de Primera · FAUBA
+        </h3>
+
+        <p>
+          Investigación y Desarrollo en detección temprana de
+          enfermedades, bioinsumos y estrés hídrico en tomate.
+          Experimentación vegetal, técnicas ópticas,
+          microbiología, sensores, procesamiento de imágenes y
+          análisis de datos con R, MATLAB y Fiji. Docencia en
+          Física Aplicada.
+        </p>
+
+      </article>
+
+
+
+      <article class="experience">
+
+        <div class="experience-date">
+          2023 — 2024
+        </div>
+
+        <h3>
+          Técnica de Laboratorio · Forrajicultura, FAUBA
+        </h3>
+
+        <p>
+          Experimentación vegetal y ecofisiología.
+          Seguimiento de ensayos en condiciones controladas,
+          reflectancia espectral, fluorescencia de clorofila,
+          área foliar y componentes de rendimiento.
+          Microscopía de hongos endófitos y micorrizas y
+          control de calidad de semillas.
+        </p>
+
+      </article>
+
+
+
+      <article class="experience">
+
+        <div class="experience-date">
+          2022 — 2023
+        </div>
+
+        <h3>
+          Analista de Suscripción Técnica Agrícola ·
+          Victoria Seguros
+        </h3>
+
+        <p>
+          Análisis técnico de riesgos agrícolas vinculados
+          con seguros de granizo y multirriesgo, atención a
+          productores y gestión de cartera.
+        </p>
+
+      </article>
+
+
+
+      <article class="experience">
+
+        <div class="experience-date">
+          2018 — 2020
+        </div>
+
+        <h3>
+          BGA Energía Sustentable
+        </h3>
+
+        <p>
+          Participación en formulación técnica y
+          presupuestación de proyectos de plantas de biogás,
+          elaboración de reportes vinculados con proyectos
+          RenovAr y organización de actividades del sector.
+        </p>
+
+      </article>
+
+
+
+      <article class="experience">
+
+        <div class="experience-date">
+          2018 — 2019
+        </div>
+
+        <h3>
+          Pasante y Tesista · INTA Castelar
+        </h3>
+
+        <p>
+          Investigación en fertilización orgánica, suelos y
+          valorización agronómica de digeridos anaeróbicos.
+          Ensayos en invernáculo y análisis físico-químicos
+          de suelos, efluentes y materiales orgánicos.
+        </p>
+
+      </article>
+
+
+
+      <article class="experience">
+
+        <div class="experience-date">
+          2014 — 2018
+        </div>
+
+        <h3>
+          Ayudante de Química Analítica · FAUBA
+        </h3>
+
+        <p>
+          Experiencia de laboratorio en análisis
+          físico-químicos de agua, suelo, sedimentos y
+          material vegetal, preparación de soluciones y
+          calibración de instrumental.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     HERRAMIENTAS
+     ================================================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Capacidades técnicas
+    </div>
+
+
+    <h2 class="section-title">
+      Herramientas y metodologías
+    </h2>
+
+
+    <div class="skills-grid">
+
+
+      <article class="skills-card">
+
+        <h3>
+          Análisis y datos
+        </h3>
+
+        <div class="chips">
+
+          <span class="chip">
+            R / RStudio
+          </span>
+
+          <span class="chip">
+            MATLAB
+          </span>
+
+          <span class="chip">
+            Fiji
+          </span>
+
+          <span class="chip">
+            Power BI
+          </span>
+
+          <span class="chip">
+            Excel
+          </span>
+
+          <span class="chip">
+            Infostat
+          </span>
+
+          <span class="chip">
+            Google Earth Engine
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="skills-card">
+
+        <h3>
+          Técnicas ópticas
+        </h3>
+
+        <div class="chips">
+
+          <span class="chip">
+            Reflectancia espectral
+          </span>
+
+          <span class="chip">
+            Fluorescencia de clorofila
+          </span>
+
+          <span class="chip">
+            Biospeckle láser
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="skills-card">
+
+        <h3>
+          Microbiología
+        </h3>
+
+        <div class="chips">
+
+          <span class="chip">
+            Aislamiento bacteriano
+          </span>
+
+          <span class="chip">
+            Cultivo bacteriano
+          </span>
+
+          <span class="chip">
+            Cuantificación bacteriana
+          </span>
+
+          <span class="chip">
+            PGPR
+          </span>
+
+          <span class="chip">
+            Azospirillum brasilense
+          </span>
+
+          <span class="chip">
+            Hongos endófitos
+          </span>
+
+          <span class="chip">
+            Micorrizas
+          </span>
+
+          <span class="chip">
+            Microscopía
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="skills-card">
+
+        <h3>
+          Experimentación y laboratorio
+        </h3>
+
+        <p class="lab-list">
+
+          <strong>
+            Análisis físico-químicos:
+          </strong>
+
+          nitrógeno por Kjeldahl,
+          fósforo extractable por Bray,
+          materia orgánica por Walkley-Black,
+          pH,
+          conductividad eléctrica,
+          cationes y aniones.
+
+        </p>
+
+
+        <div class="chips">
+
+          <span class="chip">
+            Nitrógeno Kjeldahl
+          </span>
+
+          <span class="chip">
+            Fósforo Bray
+          </span>
+
+          <span class="chip">
+            Walkley-Black
+          </span>
+
+          <span class="chip">
+            pH
+          </span>
+
+          <span class="chip">
+            Conductividad eléctrica
+          </span>
+
+          <span class="chip">
+            Preparación de soluciones
+          </span>
+
+          <span class="chip">
+            Procesamiento de muestras
+          </span>
+
+          <span class="chip">
+            Calibración de instrumental
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FORMACIÓN
+     ================================================== -->
+
+<section id="formacion">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Formación
+    </div>
+
+
+    <h2 class="section-title">
+      Educación
+    </h2>
+
+
+    <div class="education-grid">
+
+
+      <article class="education-card">
+
+        <h3>
+          Maestría en Producción Vegetal
+        </h3>
+
+        <p>
+
+          <strong>
+            Escuela para Graduados Alberto Soriano ·
+            FAUBA – UBA
+          </strong>
+
+          <br>
+
+          2024–2026 · En etapa de tesis
+
+        </p>
+
+
+        <p>
+
+          <em>
+            Métodos ópticos para el diagnóstico temprano
+            del cancro bacteriano en tomate
+          </em>
+
+        </p>
+
+      </article>
+
+
+
+      <article class="education-card">
+
+        <h3>
+          Ingeniería Agronómica
+        </h3>
+
+        <p>
+
+          <strong>
+            Facultad de Agronomía ·
+            Universidad de Buenos Aires
+          </strong>
+
+          <br>
+
+          2013–2020
+
+        </p>
+
+
+        <h3>
+          Idiomas
+        </h3>
+
+        <p>
+
+          Español nativo
+
+          <br>
+
+          Inglés avanzado
+
+          <br>
+
+          Italiano intermedio
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     VOLUNTARIADO
+     ================================================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Sustentabilidad y compromiso social
+    </div>
+
+
+    <h2 class="section-title">
+      Voluntariado y compromiso ambiental
+    </h2>
+
+
+    <div class="volunteer-grid">
+
+
+
+      <article class="volunteer">
+
+        <small>
+          UBA · 2019
+        </small>
+
+        <h3>
+          Fructus Terra
+        </h3>
+
+        <p>
+          Propagación de plantas aromáticas y medicinales en
+          un proyecto con talleres y capacitaciones en
+          producción de fitocosméticos bajo principios
+          agroecológicos.
+        </p>
+
+      </article>
+
+
+
+      <article class="volunteer">
+
+        <small>
+          FAUBA · 2017
+        </small>
+
+        <h3>
+          PECOHUE · Huerta agroecológica
+        </h3>
+
+        <p>
+          Participación en un programa social orientado a
+          favorecer la inserción laboral mediante actividades
+          prácticas de huerta agroecológica.
+        </p>
+
+      </article>
+
+
+
+      <article class="volunteer">
+
+        <small>
+          2017
+        </small>
+
+        <h3>
+          Agencia de Protección Ambiental (APrA)
+        </h3>
+
+        <p>
+          Voluntariado en fitorremediación para la depuración
+          de aguas residuales del arroyo Cildáñez.
+        </p>
+
+      </article>
+
+
+
+      <article class="volunteer">
+
+        <small>
+          2017
+        </small>
+
+        <h3>
+          ONG Sumando Energías
+        </h3>
+
+        <p>
+          Construcción de colectores solares con materiales
+          reciclados destinados a familias de barrios
+          vulnerables.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CONTACTO
+     ================================================== -->
+
+<section id="contacto">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="eyebrow">
+        Contacto
+      </div>
+
+
+      <h2 class="section-title">
+        ¿Hablamos?
+      </h2>
+
+
+      <p class="contact-text">
+
+        Interesada en oportunidades para integrarme a equipos de
+
+        <strong>
+          Investigación y Desarrollo Agronómico.
+        </strong>
+
+      </p>
+
+
+      <div class="buttons">
+
+
+        <a
+          class="button button-primary"
+          href="mailto:coffen@agro.uba.ar"
+        >
+          coffen@agro.uba.ar
+        </a>
+
+
+        <a
+          class="button button-secondary"
+          href="https://www.linkedin.com/in/camila-coffen-746a94135/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+
+      </div>
+
+
+      <p>
+        CABA, Argentina
+      </p>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     FOOTER
+     ================================================== -->
+
+<footer>
+
+  <div class="container">
+
+    © 2026 Camila Coffen ·
+    Ingeniera Agrónoma ·
+    Investigación & Desarrollo Agronómico
+
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
